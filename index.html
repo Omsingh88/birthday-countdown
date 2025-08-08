@@ -4,6 +4,60 @@
 <title>Birthday Countdown</title>
 <link rel="stylesheet" href="style.css">
 <style>
+/* Love Theme Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 8px rgba(255, 0, 102, 0.6);
+}
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: auto;
+}
+@keyframes floatHearts {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
+.heart {
+    position: fixed;
+    bottom: -50px;
+    color: rgba(255, 0, 102, 0.7);
+    font-size: 20px;
+    animation: floatHearts 10s linear infinite;
+    z-index: 1;
+}
+a.button {
+    background: #ff4b6e;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+a.button:hover {
+    background: #ff1f4d;
+}
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
 /* Background Video Styling */
 .video-bg {
     position: fixed;
@@ -12,6 +66,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center; /* Adjust to show full face */
     z-index: -2;
 }
 .overlay {
@@ -20,7 +75,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.35); /* darken for readability */
+    background: rgba(0, 0, 0, 0.35);
     z-index: -1;
 }
 </style>
@@ -34,6 +89,7 @@
 </video>
 <div class="overlay"></div>
 
+<!-- Main Content -->
 <h1>My Love's Birthday Countdown ❤️</h1>
 <p>Each day reveals a new surprise for you!</p>
 <ul style="list-style:none; padding:0;">
@@ -48,6 +104,7 @@
     <li><a href="day9.html" class="button">Day 9</a></li>
 </ul>
 
+<!-- Hearts Animation -->
 <script>
 function createHeart() {
     const heart = document.createElement("div");
