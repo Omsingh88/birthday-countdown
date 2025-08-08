@@ -1,13 +1,31 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Day 1</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-<h1>Day 1</h1>
-<p>The countdown begins, baby ❤️ Every day until your birthday, I’ll remind you how much you mean to me. Today is Day 1, and I’m already the luckiest person in the world to have you.</p>
-<img src="https://via.placeholder.com/400x300" alt="Day 1 Image">
-</div>
+    <h1>Day 1 ❤️</h1>
+    <p>Message for Day 1 goes here... (Replace with your real message)</p>
+    <a href="index.html" class="button">Back Home</a>
+
+    <!-- Floating Hearts -->
+    <script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+    setInterval(createHeart, 500);
+    </script>
 </body>
 </html>
