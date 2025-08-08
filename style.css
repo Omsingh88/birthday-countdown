@@ -1,63 +1,65 @@
-
+/* Love Theme Styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background: #fff;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
-.container {
+
+/* Heading Style */
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 8px rgba(255, 0, 102, 0.6);
+}
+
+/* Text Style */
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
     max-width: 600px;
     margin: auto;
-    padding: 20px;
 }
-.day-card {
-    background: white;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+/* Heart Animation */
+@keyframes floatHearts {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
 }
-.day-card a {
+
+.heart {
+    position: fixed;
+    bottom: -50px;
+    color: rgba(255, 0, 102, 0.7);
+    font-size: 20px;
+    animation: floatHearts 10s linear infinite;
+    z-index: 0;
+}
+
+/* Button Style */
+a.button {
+    background: #ff4b6e;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
     text-decoration: none;
-    color: crimson;
-    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background 0.3s ease;
 }
-img {
-    max-width: 100%;
-    border-radius: 12px;
-    margin-top: 10px;
+a.button:hover {
+    background: #ff1f4d;
 }
-/* Animation for Day 9 */
-@keyframes confettiFall {
-    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-}
+
+/* Confetti for Birthday */
 .confetti {
     position: fixed;
     top: 0;
-    width: 10px;
-    height: 10px;
-    background-color: red;
-    animation: confettiFall 3s linear infinite;
-}
-.fade-in {
-    animation: fadeIn 2s ease-in;
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-.bounce {
-    animation: bounce 2s infinite;
-}
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-20px);}
-    60% {transform: translateY(-10px);}
-}
-.glow {
-    color: #ff4081;
-    text-shadow: 0 0 10px #ff4081, 0 0 20px #ff4081, 0 0 30px #ff4081;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
