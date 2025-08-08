@@ -11,16 +11,16 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Background Video Styling */
-.video-bg {
+/* Background Image Styling */
+.bg-image {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: auto; /* keep original proportions */
-    min-height: 100%;
-    object-fit: cover;
-    object-position: top center; /* lock to very top */
+    height: 100%;
+    background-image: url('your-image.jpg'); /* Replace with your image file */
+    background-size: cover;
+    background-position: center top;
     z-index: -2;
 }
 
@@ -41,7 +41,6 @@ body {
     background: linear-gradient(135deg, #ffafbd, #ffc3a0);
     color: #fff;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 h1, h2 {
     font-family: 'Dancing Script', cursive;
@@ -91,11 +90,8 @@ a.button:hover {
 </head>
 <body>
 
-<!-- Background Video -->
-<video autoplay loop muted playsinline class="video-bg">
-    <source src="your-video.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-</video>
+<!-- Background Image -->
+<div class="bg-image"></div>
 <div class="overlay"></div>
 
 <h1>My Love's Birthday Countdown ❤️</h1>
