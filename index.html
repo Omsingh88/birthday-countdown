@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Birthday Countdown</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>My Love's Birthday Countdown ❤️</h1>
+<p>Each day reveals a new surprise for you!</p>
+<ul style="list-style:none; padding:0;">
+<li><a href="day1.html" class="button">Day 1</a></li><li><a href="day2.html" class="button">Day 2</a></li><li><a href="day3.html" class="button">Day 3</a></li><li><a href="day4.html" class="button">Day 4</a></li><li><a href="day5.html" class="button">Day 5</a></li><li><a href="day6.html" class="button">Day 6</a></li><li><a href="day7.html" class="button">Day 7</a></li><li><a href="day8.html" class="button">Day 8</a></li><li><a href="day9.html" class="button">Day 9</a></li>
+</ul>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>

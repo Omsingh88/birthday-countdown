@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas class="confetti"></canvas>
+<h1 style="font-size:3rem; text-shadow:0 0 20px #fff;">🎉 Happy Birthday My Love ❤️ 🎉</h1>
+<p>You are the best thing that ever happened to me. I hope your day is as beautiful as your smile 💖</p>
+<a href="index.html" class="button">Back</a>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+setInterval(createHeart, 500);
+</script>
+
+<script>
+// Simple Confetti
+const canvas = document.querySelector('.confetti');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let pieces = [];
+for (let i = 0; i < 100; i++) {
+    pieces.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 5 + 2,
+        color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+        speed: Math.random() + 0.5
+    });
+}
+function draw() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+    });
+}
+function update() {
+    pieces.forEach(p => {
+        p.y += p.speed;
+        if (p.y > canvas.height) p.y = 0;
+    });
+}
+function loop() {
+    draw();
+    update();
+    requestAnimationFrame(loop);
+}
+loop();
+</script>
+</body>
+</html>

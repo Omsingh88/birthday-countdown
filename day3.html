@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Day 3</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Day 3</h1>
+<p>Your laugh is my favorite sound in the world 😍</p>
+<a href="index.html" class="button">Back</a>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
